@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Wanna Be My Valentine ?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">Do You Wanna Be My Valentine ?</h1>
+        <div class="gif_container">
+            <img src="https://media.tenor.com/Y31SNyWcWkAAAAAi/bahroo-love.gif" alt="Bahroo Love Sticker">
+        </div>
+        
+        
+        <div class="buttons">
+            <!-- Le bouton Yes reste inchangé (il utilise le son click et la redirection) -->
+            <button class="btn" id="yesButton" onclick="playClickSound(); setTimeout(nextConfirm, 300)">Yes</button>
+            <!-- Le bouton No joue maintenant le son hover lors du survol -->
+            <button class="btn" id="noButton" onmouseover="playHoverAndMove(this)">No</button>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
