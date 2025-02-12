@@ -79,7 +79,7 @@ function nextYes() {
 
 function goBack() {
     saveMusicTime();
-    window.location.href = "../kamilla.html";
+    window.location.href = "../index.html";
 }
 
 // --------------------------------------
