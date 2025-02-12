@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You Are My Valentine !</title>
+    <link rel="stylesheet" href="yes_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        .gif_text_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .koala_text {
+            font-size: 24px;
+            color: #ff6b81;
+            font-family: 'Indie Flower', cursive;
+        }
+        .timer_container {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #ff6b81;
+            font-family: 'Indie Flower', cursive;
+            background-color: #ffebee;
+            padding: 5px 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 107, 129, 0.3);
+        }
+        .container {
+            position: relative; /* Necessary for positioning the timer inside */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">You Are My Valentine !</h1>
+        <p class="final_message">
+            Oops, too late now... you've confirmed, sweetheart, can't run away !
+        </p>
+        <div class="gif_container">
+            <img src="https://media.tenor.com/4xtzP7GY6wAAAAAd/valentine-s-day.gif" alt="Valentine Love">
+        </div>
+        <div class="gif_text_container">
+            <img src="https://media.tenor.com/V963h-HMxd0AAAAj/tkthao219-bubududu.gif" alt="Extra Fun Image">
+            <p class="koala_text">My Koala ❤️</p>
+        </div>
+        <!-- Timer div -->
+        <div id="timer" class="timer_container">
+            Loading timer...
+        </div>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            const targetDate = new Date(new Date().getFullYear(), 1, 14, 0, 0, 0); // February 14th at 00:00:00
+
+            function updateTimer() {
+                const now = new Date();
+                const timeDiff = targetDate - now;
+
+                if (timeDiff > 0) {
+                    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+                    timerElement.textContent = `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+                } else {
+                    timerElement.textContent = "Happy Valentine's Day!";
+                    clearInterval(timerInterval);
+                }
+            }
+
+            // Update every second
+            const timerInterval = setInterval(updateTimer, 1000);
+            updateTimer(); // Call immediately to avoid initial delay
+        }
+
+        // Start timer when the page is clicked
+        document.body.addEventListener("click", startTimer, { once: true });
+    </script>
+</body>
+</html>
