@@ -65,7 +65,7 @@ function saveMusicTime() {
 }
 
 // --------------------------------------
-// Redirections (ordinateur)
+// Redirections 
 // --------------------------------------
 function nextConfirm() {
     saveMusicTime();
@@ -232,3 +232,22 @@ window.addEventListener("load", function () {
         }
     }, { once: true });
 });
+
+
+onload = () => {
+    const c = setTimeout(() => {
+      document.body.classList.remove("not-loaded");
+      clearTimeout(c);
+    }, 1000);
+  };
+
+function redirectToIndex() {
+    setTimeout(function() {
+        window.location.href = '../kamilla.html'; 
+    }, 300); 
+}
+
+document.getElementById('heartButton').addEventListener('click', function() {
+    redirectToIndex();
+});
+

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Really !?? ?</title>
-    <!-- Chemin relatif pour accéder à styles.css à la racine -->
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
@@ -15,9 +14,7 @@
         </div>
         
         <div class="buttons">
-            <!-- Ajout de playClickSound() avant la redirection vers yes.html -->
             <button class="btn" id="confirmButton" onclick="playClickSound(); setTimeout(nextYes, 200)">Confirm</button>
-            <!-- Redirection vers index.html en remontant d'un niveau -->
             <button class="btn" id="backButton" onclick="goBack()" onmouseenter="playHoverAndMove(this)">Step Back</button>
         </div>
     </div>
