@@ -1047,6 +1047,15 @@
     left: 50px;
     text-align: center;
   }
+
+/* Ajustement pour les téléphones */
+  @media (max-width: 768px) {
+    .header-container {
+        top: 90px; /* Réduction du top */
+        left: 50%; /* Centrage horizontal */
+        transform: translateX(-50%); /* Centrage ajusté */
+    }
+  }
   
   .valentine {
     color: #fff;
